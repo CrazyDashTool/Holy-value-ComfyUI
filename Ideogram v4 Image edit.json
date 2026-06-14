@@ -1,0 +1,1168 @@
+{
+  "id": "1a894d53-8eec-4a99-b604-5459dffffbb6",
+  "revision": 0,
+  "last_node_id": 6,
+  "last_link_id": 48,
+  "nodes": [
+    {
+      "id": 3,
+      "type": "LoadImage",
+      "pos": [
+        -255.27607448551646,
+        144.574083603906
+      ],
+      "size": [
+        282.798828125,
+        314
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            47
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "f95c88773e4e799bf64cb6adf0ac7a6bdaeddaad03b513ccd68b0bb8e6dd4e23.png",
+        "image"
+      ]
+    },
+    {
+      "id": 1,
+      "type": "76928371-ad98-4000-8287-abd473f51aa0",
+      "pos": [
+        83.96932014704771,
+        146.15906221967663
+      ],
+      "size": [
+        403.0393831102024,
+        303.10111105271756
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 47
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            48
+          ]
+        }
+      ],
+      "properties": {
+        "proxyWidgets": [
+          [
+            "clip",
+            "clip_name"
+          ],
+          [
+            "caption",
+            "text"
+          ]
+        ]
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 5,
+      "type": "PreviewImage",
+      "pos": [
+        525.3726035934925,
+        148.8001840159349
+      ],
+      "size": [
+        331.4440163076383,
+        295.84493743034096
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 48
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 6,
+      "type": "Note",
+      "pos": [
+        -482.8992886568336,
+        146.97686593866393
+      ],
+      "size": [
+        210,
+        300.67254371873764
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Describe full scene, not changes"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [
+      47,
+      3,
+      0,
+      1,
+      0,
+      "IMAGE"
+    ],
+    [
+      48,
+      1,
+      0,
+      5,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "definitions": {
+    "subgraphs": [
+      {
+        "id": "76928371-ad98-4000-8287-abd473f51aa0",
+        "version": 1,
+        "state": {
+          "lastGroupId": 0,
+          "lastNodeId": 6,
+          "lastLinkId": 48,
+          "lastRerouteId": 0
+        },
+        "revision": 0,
+        "config": {},
+        "name": "Image edit (Ideogram v4)",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            -88,
+            756,
+            128,
+            108
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            1855.164961462007,
+            287.29607512747265,
+            128,
+            68
+          ]
+        },
+        "inputs": [
+          {
+            "id": "ec8ec102-6e16-4bc6-bf80-beb4e5e50c1b",
+            "name": "image",
+            "type": "IMAGE",
+            "linkIds": [
+              22,
+              33
+            ],
+            "localized_name": "image",
+            "pos": [
+              16,
+              780
+            ]
+          },
+          {
+            "id": "19f8eede-ea26-4438-a4d5-39658e2fcec9",
+            "name": "clip_name",
+            "type": "COMBO",
+            "linkIds": [
+              45
+            ],
+            "pos": [
+              16,
+              800
+            ]
+          },
+          {
+            "id": "1f61b0eb-3711-47b2-8bc4-851e304e6f31",
+            "name": "text",
+            "type": "STRING",
+            "linkIds": [
+              46
+            ],
+            "pos": [
+              16,
+              820
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "id": "6b5f219b-04a0-4a7e-bc88-b8c146546184",
+            "name": "IMAGE",
+            "type": "IMAGE",
+            "linkIds": [
+              42
+            ],
+            "localized_name": "IMAGE",
+            "pos": [
+              1879.164961462007,
+              311.29607512747265
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": "cfg_override",
+            "type": "CFGOverride",
+            "pos": [
+              482.798828125,
+              326
+            ],
+            "size": [
+              270,
+              106
+            ],
+            "flags": {},
+            "order": 5,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 25
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "MODEL",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  26
+                ]
+              }
+            ],
+            "title": "CFG 3 for last 30% of trajectory",
+            "properties": {
+              "Node name for S&R": "CFGOverride"
+            },
+            "widgets_values": [
+              3,
+              0.7,
+              1
+            ]
+          },
+          {
+            "id": "unet",
+            "type": "UNETLoader",
+            "pos": [
+              190.94266381677755,
+              321.2957281685852
+            ],
+            "size": [
+              270,
+              82
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "MODEL",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  25
+                ]
+              }
+            ],
+            "title": "Ideogram 4 (conditional)",
+            "properties": {
+              "Node name for S&R": "UNETLoader"
+            },
+            "widgets_values": [
+              "ideogram4_fp8_scaled.safetensors",
+              "default"
+            ]
+          },
+          {
+            "id": "caption",
+            "type": "CLIPTextEncode",
+            "pos": [
+              491.0539361106919,
+              473.0979896665844
+            ],
+            "size": [
+              400,
+              200
+            ],
+            "flags": {},
+            "order": 6,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "clip",
+                "name": "clip",
+                "type": "CLIP",
+                "link": 23
+              },
+              {
+                "localized_name": "text",
+                "name": "text",
+                "type": "STRING",
+                "widget": {
+                  "name": "text"
+                },
+                "link": 46
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "CONDITIONING",
+                "name": "CONDITIONING",
+                "type": "CONDITIONING",
+                "links": [
+                  24,
+                  27
+                ]
+              }
+            ],
+            "title": "Edit caption (JSON)",
+            "properties": {
+              "Node name for S&R": "CLIPTextEncode"
+            },
+            "widgets_values": [
+              "{\n  \"high_level_description\": \"Cat eat sushi\",\n  \"style\": {\n    \"medium\": \"photograph\",\n    \"lighting\": \"smoth light\",\n    \"mood\": \"serene\"\n  }\n}"
+            ]
+          },
+          {
+            "id": "unet_uncond",
+            "type": "UNETLoader",
+            "pos": [
+              188.70603097415977,
+              448.13323061371983
+            ],
+            "size": [
+              359.370703125,
+              82
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "MODEL",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  28
+                ]
+              }
+            ],
+            "title": "Ideogram 4 (unconditional, for asymmetric CFG)",
+            "properties": {
+              "Node name for S&R": "UNETLoader"
+            },
+            "widgets_values": [
+              "ideogram4_unconditional_fp8_scaled.safetensors",
+              "default"
+            ]
+          },
+          {
+            "id": "clip",
+            "type": "CLIPLoader",
+            "pos": [
+              195.8984909609754,
+              573.824671059177
+            ],
+            "size": [
+              270,
+              106
+            ],
+            "flags": {},
+            "order": 7,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "clip_name",
+                "name": "clip_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "clip_name"
+                },
+                "link": 45
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "CLIP",
+                "name": "CLIP",
+                "type": "CLIP",
+                "links": [
+                  23
+                ]
+              }
+            ],
+            "title": "Qwen3-VL text encoder",
+            "properties": {
+              "Node name for S&R": "CLIPLoader"
+            },
+            "widgets_values": [
+              "qwen3vl_8b_fp8_scaled.safetensors",
+              "ideogram4",
+              "default"
+            ]
+          },
+          {
+            "id": "vae",
+            "type": "VAELoader",
+            "pos": [
+              205.70629948706852,
+              724.4967352193314
+            ],
+            "size": [
+              270,
+              58
+            ],
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "VAE",
+                "name": "VAE",
+                "type": "VAE",
+                "links": [
+                  34,
+                  41
+                ]
+              }
+            ],
+            "title": "VAE",
+            "properties": {
+              "Node name for S&R": "VAELoader"
+            },
+            "widgets_values": [
+              "flux2-vae.safetensors"
+            ]
+          },
+          {
+            "id": "encode",
+            "type": "VAEEncode",
+            "pos": [
+              501.324639713033,
+              721.9980631466872
+            ],
+            "size": [
+              196.33359375,
+              46
+            ],
+            "flags": {},
+            "order": 8,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "pixels",
+                "name": "pixels",
+                "type": "IMAGE",
+                "link": 33
+              },
+              {
+                "localized_name": "vae",
+                "name": "vae",
+                "type": "VAE",
+                "link": 34
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "LATENT",
+                "name": "LATENT",
+                "type": "LATENT",
+                "links": [
+                  39
+                ]
+              }
+            ],
+            "title": "Encode source to latent",
+            "properties": {
+              "Node name for S&R": "VAEEncode"
+            },
+            "widgets_values": []
+          },
+          {
+            "id": "euler",
+            "type": "KSamplerSelect",
+            "pos": [
+              500.37626378122155,
+              843.8220079988322
+            ],
+            "size": [
+              270,
+              58
+            ],
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "SAMPLER",
+                "name": "SAMPLER",
+                "type": "SAMPLER",
+                "links": [
+                  37
+                ]
+              }
+            ],
+            "title": "Euler",
+            "properties": {
+              "Node name for S&R": "KSamplerSelect"
+            },
+            "widgets_values": [
+              "euler"
+            ]
+          },
+          {
+            "id": "noise",
+            "type": "RandomNoise",
+            "pos": [
+              213.8795037441222,
+              832.3996918411596
+            ],
+            "size": [
+              270,
+              82
+            ],
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "localized_name": "NOISE",
+                "name": "NOISE",
+                "type": "NOISE",
+                "links": [
+                  35
+                ]
+              }
+            ],
+            "title": "Noise",
+            "properties": {
+              "Node name for S&R": "RandomNoise"
+            },
+            "widgets_values": [
+              12345,
+              "randomize"
+            ]
+          },
+          {
+            "id": "caption_zero",
+            "type": "ConditioningZeroOut",
+            "pos": [
+              903.6825913733809,
+              479.93021253567053
+            ],
+            "size": [
+              235.5923828125,
+              26
+            ],
+            "flags": {},
+            "order": 9,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "conditioning",
+                "name": "conditioning",
+                "type": "CONDITIONING",
+                "link": 24
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "CONDITIONING",
+                "name": "CONDITIONING",
+                "type": "CONDITIONING",
+                "links": [
+                  29
+                ]
+              }
+            ],
+            "title": "Zeroed cond for uncond pass",
+            "properties": {
+              "Node name for S&R": "ConditioningZeroOut"
+            },
+            "widgets_values": []
+          },
+          {
+            "id": "guider",
+            "type": "DualModelGuider",
+            "pos": [
+              1120.4313846195562,
+              404.50440065425374
+            ],
+            "size": [
+              270,
+              118
+            ],
+            "flags": {},
+            "order": 10,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 26
+              },
+              {
+                "localized_name": "positive",
+                "name": "positive",
+                "type": "CONDITIONING",
+                "link": 27
+              },
+              {
+                "localized_name": "model_negative",
+                "name": "model_negative",
+                "shape": 7,
+                "type": "MODEL",
+                "link": 28
+              },
+              {
+                "localized_name": "negative",
+                "name": "negative",
+                "shape": 7,
+                "type": "CONDITIONING",
+                "link": 29
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "GUIDER",
+                "name": "GUIDER",
+                "type": "GUIDER",
+                "links": [
+                  36
+                ]
+              }
+            ],
+            "title": "Asymmetric CFG guider",
+            "properties": {
+              "Node name for S&R": "DualModelGuider"
+            },
+            "widgets_values": [
+              7
+            ]
+          },
+          {
+            "id": "image_size",
+            "type": "GetImageSize",
+            "pos": [
+              198.69958523548155,
+              213.91117959085338
+            ],
+            "size": [
+              140,
+              66
+            ],
+            "flags": {},
+            "order": 11,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "image",
+                "name": "image",
+                "type": "IMAGE",
+                "link": 22
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "width",
+                "name": "width",
+                "type": "INT",
+                "links": [
+                  30
+                ]
+              },
+              {
+                "localized_name": "height",
+                "name": "height",
+                "type": "INT",
+                "links": [
+                  31
+                ]
+              },
+              {
+                "localized_name": "batch_size",
+                "name": "batch_size",
+                "type": "INT",
+                "links": null
+              }
+            ],
+            "title": "Get image size",
+            "properties": {
+              "Node name for S&R": "GetImageSize"
+            },
+            "widgets_values": []
+          },
+          {
+            "id": "sigmas_full",
+            "type": "Ideogram4Scheduler",
+            "pos": [
+              759.8348549319177,
+              277.44392070690674
+            ],
+            "size": [
+              296.3091796875,
+              154
+            ],
+            "flags": {},
+            "order": 12,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "width",
+                "name": "width",
+                "type": "INT",
+                "widget": {
+                  "name": "width"
+                },
+                "link": 30
+              },
+              {
+                "localized_name": "height",
+                "name": "height",
+                "type": "INT",
+                "widget": {
+                  "name": "height"
+                },
+                "link": 31
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "SIGMAS",
+                "name": "SIGMAS",
+                "type": "SIGMAS",
+                "links": [
+                  32
+                ]
+              }
+            ],
+            "title": "Logit-normal schedule (Default preset)",
+            "properties": {
+              "Node name for S&R": "Ideogram4Scheduler"
+            },
+            "widgets_values": [
+              20,
+              1024,
+              1024,
+              0,
+              1.75
+            ]
+          },
+          {
+            "id": "sigmas_split",
+            "type": "SplitSigmasDenoise",
+            "pos": [
+              1050.7185267243715,
+              278.6426564167154
+            ],
+            "size": [
+              507.464453125,
+              78
+            ],
+            "flags": {},
+            "order": 13,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "sigmas",
+                "name": "sigmas",
+                "type": "SIGMAS",
+                "link": 32
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "high_sigmas",
+                "name": "high_sigmas",
+                "type": "SIGMAS",
+                "links": null
+              },
+              {
+                "localized_name": "low_sigmas",
+                "name": "low_sigmas",
+                "type": "SIGMAS",
+                "links": [
+                  38
+                ]
+              }
+            ],
+            "title": "SDEdit strength: 0.4 subtle restyle, 0.55-0.75 semantic edit, >0.8 loose",
+            "properties": {
+              "Node name for S&R": "SplitSigmasDenoise"
+            },
+            "widgets_values": [
+              0.65
+            ]
+          },
+          {
+            "id": "sample",
+            "type": "SamplerCustomAdvanced",
+            "pos": [
+              1424.314756717779,
+              290.62994492285526
+            ],
+            "size": [
+              240.7193359375,
+              106
+            ],
+            "flags": {},
+            "order": 14,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "noise",
+                "name": "noise",
+                "type": "NOISE",
+                "link": 35
+              },
+              {
+                "localized_name": "guider",
+                "name": "guider",
+                "type": "GUIDER",
+                "link": 36
+              },
+              {
+                "localized_name": "sampler",
+                "name": "sampler",
+                "type": "SAMPLER",
+                "link": 37
+              },
+              {
+                "localized_name": "sigmas",
+                "name": "sigmas",
+                "type": "SIGMAS",
+                "link": 38
+              },
+              {
+                "localized_name": "latent_image",
+                "name": "latent_image",
+                "type": "LATENT",
+                "link": 39
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "output",
+                "name": "output",
+                "type": "LATENT",
+                "links": [
+                  40
+                ]
+              },
+              {
+                "localized_name": "denoised_output",
+                "name": "denoised_output",
+                "type": "LATENT",
+                "links": null
+              }
+            ],
+            "title": "Sample (low_sigmas = SDEdit)",
+            "properties": {
+              "Node name for S&R": "SamplerCustomAdvanced"
+            },
+            "widgets_values": []
+          },
+          {
+            "id": "decode",
+            "type": "VAEDecode",
+            "pos": [
+              1647.9725014751914,
+              297.82233631772493
+            ],
+            "size": [
+              140,
+              46
+            ],
+            "flags": {},
+            "order": 15,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "samples",
+                "name": "samples",
+                "type": "LATENT",
+                "link": 40
+              },
+              {
+                "localized_name": "vae",
+                "name": "vae",
+                "type": "VAE",
+                "link": 41
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "IMAGE",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [
+                  42
+                ]
+              }
+            ],
+            "title": "Decode",
+            "properties": {
+              "Node name for S&R": "VAEDecode"
+            },
+            "widgets_values": []
+          }
+        ],
+        "groups": [],
+        "links": [
+          {
+            "id": 24,
+            "origin_id": "caption",
+            "origin_slot": 0,
+            "target_id": "caption_zero",
+            "target_slot": 0,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 25,
+            "origin_id": "unet",
+            "origin_slot": 0,
+            "target_id": "cfg_override",
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 30,
+            "origin_id": "image_size",
+            "origin_slot": 0,
+            "target_id": "sigmas_full",
+            "target_slot": 0,
+            "type": "INT"
+          },
+          {
+            "id": 31,
+            "origin_id": "image_size",
+            "origin_slot": 1,
+            "target_id": "sigmas_full",
+            "target_slot": 1,
+            "type": "INT"
+          },
+          {
+            "id": 32,
+            "origin_id": "sigmas_full",
+            "origin_slot": 0,
+            "target_id": "sigmas_split",
+            "target_slot": 0,
+            "type": "SIGMAS"
+          },
+          {
+            "id": 34,
+            "origin_id": "vae",
+            "origin_slot": 0,
+            "target_id": "encode",
+            "target_slot": 1,
+            "type": "VAE"
+          },
+          {
+            "id": 35,
+            "origin_id": "noise",
+            "origin_slot": 0,
+            "target_id": "sample",
+            "target_slot": 0,
+            "type": "NOISE"
+          },
+          {
+            "id": 36,
+            "origin_id": "guider",
+            "origin_slot": 0,
+            "target_id": "sample",
+            "target_slot": 1,
+            "type": "GUIDER"
+          },
+          {
+            "id": 37,
+            "origin_id": "euler",
+            "origin_slot": 0,
+            "target_id": "sample",
+            "target_slot": 2,
+            "type": "SAMPLER"
+          },
+          {
+            "id": 38,
+            "origin_id": "sigmas_split",
+            "origin_slot": 1,
+            "target_id": "sample",
+            "target_slot": 3,
+            "type": "SIGMAS"
+          },
+          {
+            "id": 39,
+            "origin_id": "encode",
+            "origin_slot": 0,
+            "target_id": "sample",
+            "target_slot": 4,
+            "type": "LATENT"
+          },
+          {
+            "id": 40,
+            "origin_id": "sample",
+            "origin_slot": 0,
+            "target_id": "decode",
+            "target_slot": 0,
+            "type": "LATENT"
+          },
+          {
+            "id": 41,
+            "origin_id": "vae",
+            "origin_slot": 0,
+            "target_id": "decode",
+            "target_slot": 1,
+            "type": "VAE"
+          },
+          {
+            "id": 23,
+            "origin_id": "clip",
+            "origin_slot": 0,
+            "target_id": "caption",
+            "target_slot": 0,
+            "type": "CLIP"
+          },
+          {
+            "id": 26,
+            "origin_id": "cfg_override",
+            "origin_slot": 0,
+            "target_id": "guider",
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 27,
+            "origin_id": "caption",
+            "origin_slot": 0,
+            "target_id": "guider",
+            "target_slot": 1,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 28,
+            "origin_id": "unet_uncond",
+            "origin_slot": 0,
+            "target_id": "guider",
+            "target_slot": 2,
+            "type": "MODEL"
+          },
+          {
+            "id": 29,
+            "origin_id": "caption_zero",
+            "origin_slot": 0,
+            "target_id": "guider",
+            "target_slot": 3,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 22,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": "image_size",
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 33,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": "encode",
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 42,
+            "origin_id": "decode",
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "IMAGE"
+          },
+          {
+            "id": 45,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": "clip",
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 46,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": "caption",
+            "target_slot": 1,
+            "type": "STRING"
+          }
+        ],
+        "extra": {}
+      }
+    ]
+  },
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8775411383452935,
+      "offset": [
+        689.1256307002047,
+        92.52800235579497
+      ]
+    },
+    "frontendVersion": "1.45.15",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
