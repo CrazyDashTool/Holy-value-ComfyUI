@@ -1,1 +1,1 @@
-All that uses Ideogram v4 will be placed there
+All that uses LTX-2.3 will be placed there
